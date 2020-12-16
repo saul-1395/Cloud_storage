@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:id="rootNode" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.geekbrains.april.cloud.box.client.MainController">
+
+    <HBox fx:id="authPanel">
+        <TextField HBox.hgrow="ALWAYS" fx:id="loginField" promptText="Логин" />
+        <PasswordField HBox.hgrow="ALWAYS" fx:id="passField" promptText="Пароль" onAction="#sendAuth" />
+        <Button HBox.hgrow="ALWAYS" text="Подключиться" onAction="#sendAuth" />
+        <Button HBox.hgrow="ALWAYS" text="Зарегестрироваться" onAction="#sendNewUser" />
+    </HBox>
+
+
+
+    <HBox fx:id="filePanel">
+
+        <TextField fx:id="tfFileName" focusTraversable="false" promptText="Укажите имя файла на сервере, который хотите скачать" HBox.hgrow="ALWAYS" />
+        <Button onAction="#pressOnDownloadBtn" text="Скачать" />
+        <Button onAction="#pressOnLoadBtn" text="Отправить" />
+
+
+
+    </HBox>
+
+    <HBox fx:id="fileList">
+
+
+
+        <TableView fx:id="filesListServerTable" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+            <columns>
+                <!-- Колонки таблицы -->
+                <TableColumn prefWidth="150.0" text="Name" fx:id="fileNameServer" />
+                <TableColumn prefWidth="150.0" text="Size" fx:id="fileSizeServer" />
+
+            </columns>
+        </TableView>
+
+        <TableView fx:id="filesListClientTable" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+            <columns>
+                <!-- Колонки таблицы -->
+                <TableColumn prefWidth="150.0" text="Name" fx:id="fileNameClient" />
+                <TableColumn prefWidth="150.0" text="Size" fx:id="fileSizeClient" />
+
+            </columns>
+        </TableView>
+
+    </HBox>
+
+
+    <HBox fx:id="commandButton" >
+
+        <Button HBox.hgrow="ALWAYS" text="Удалить" onAction="#deleteFile" />
+        <Button HBox.hgrow="ALWAYS" text="Обновить список файлов" onAction="#refreshList" />
+
+    </HBox>
+
+
+</VBox>
