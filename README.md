@@ -9,7 +9,7 @@
 ##### <li>frameworks: Netty on server (pipeline), NIO on client
 
 ### This example shows how the client-server architecture is implemented using the example of cloud data storage.
-### the project has three modules: server, common and client:
+### The project has three modules: server, common and client:
 
 
 #### Server from Netty with pipeline:
@@ -52,4 +52,4 @@ ServerBootstrap b = new ServerBootstrap();
     }
 ```
 
-#### The common module contains file types that are used for data exchange between the client and the server.
+#### The common module contains file types that are used for data exchange between the client and server.
